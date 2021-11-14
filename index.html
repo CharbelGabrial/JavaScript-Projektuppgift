@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <title>JavaScript Project</title>
+  </head>
+  <body>
+    <!-- Start Courses Modal -->
+    <div id="courses-confirmation">
+      <span class="loader"></span>
+    </div>
+    <div id="courses-modal-wrapper">
+      <div class="courses-modal">
+        <div class="modal-header">
+          <span onclick="closeCoursesModal()"
+            ><i class="far fa-times-circle"></i
+          ></span>
+        </div>
+        <div id="courses-modal-content"></div>
+        <div id="courses-section" class="courses-section">
+          <form onsubmit="sendFormInfo(); return false">
+            <h2>GET 30% OFF ON ALL COURSES</h2>
+            <p>
+              Fill in the information below, then click <span>SUBSCRIBE</span>
+            </p>
+            <input id="email" type="email" placeholder="Email" required />
+            <input id="name" type="text" placeholder="Name" required />
+            <input
+              id="coursess"
+              list="items"
+              placeholder="Which style of dance do you like to learn?"
+              required
+            />
+            <datalist id="items">
+              <option value="BALLET Dancing"></option>
+              <option value="SALSA Dancing"></option>
+              <option value="HIP HOP Dancing"></option>
+              <option value="STREET Dancing"></option>
+              <option value="SAMBA Dancing"></option>
+            </datalist>
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Courses Modal -->
+    <!-- Start Contact Modal -->
+    <div id="contact-modal-wrapper">
+      <div class="contact-modal">
+        <div class="contact-modal-header">
+          <span onclick="closeContactModal()"
+            ><i class="far fa-times-circle"></i
+          ></span>
+        </div>
+        <div id="contact-modal-content"></div>
+      </div>
+    </div>
+    <!-- End Contact Modal -->
+    <!-- Start Nav -->
+    <nav>
+      <div class="banner" id="home">
+        <div class="navbar">
+          <img class="logo" src="./img/just-dance.png" alt="Logo" />
+          <div class="links">
+            <span class="icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Landing Section -->
+    <div class="landing">
+      <div class="intro-text">
+        <h1>Dance is your pulse</h1>
+        <p>There are shortcuts to happiness, and dancing is one of them.</p>
+        <a href="#courses" class="button"> SEE OUR COURSES! </a>
+      </div>
+    </div>
+    <!-- End Landing Section -->
+    <!-- Start Features -->
+    <div class="features">
+      <div class="container">
+        <div class="feat">
+          <i class="fas fa-quote-left" style="font-size: 40px"></i><br />
+          <i class="fas fa-quote-right" style="font-size: 30px"></i>
+          <h3>Merce Cunningham</h3>
+          <p>
+            “You have to love dancing to stick to it. It gives you nothing back,
+            no paintings to show on walls and maybe hang in museums, no poems to
+            be printed and sold, nothing but that single fleeting moment when
+            you feel alive.”
+          </p>
+        </div>
+        <div class="feat">
+          <i class="fas fa-quote-left" style="font-size: 40px"></i><br />
+          <i class="fas fa-quote-right" style="font-size: 30px"></i>
+          <h3>Martha Graham</h3>
+          <p>
+            “I feel that the essence of dance is the expression of man – the
+            landscape of his soul. I hope that every dance I do reveals
+            something of myself or some wonderful thing a human can be.”
+          </p>
+        </div>
+        <div class="feat">
+          <i class="fas fa-quote-left" style="font-size: 40px"></i><br />
+          <i class="fas fa-quote-right" style="font-size: 30px"></i>
+          <h3>Kamand Kojouri</h3>
+          <p>
+            “We dance to seduce ourselves. To fall in love with ourselves. When
+            we dance with another, we manifest the very thing we love about
+            ourselves so that they may see it and love us too.”
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Features -->
+    <!-- Start Services -->
+    <div class="gallery-content" id="gallery">
+      <div class="container">
+        <h2 class="special-heading">Gallery</h2>
+        <!-- Start Gallery Images -->
+        <div class="gallery-section">
+          <div class="gallery" id="Gallery">
+            <div class="gallery-item">
+              <img
+                src="img/img1.jpg"
+                onclick="openModal();currentSlide(1)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img2.jpg"
+                onclick="openModal();currentSlide(2)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img3.jpg"
+                onclick="openModal();currentSlide(3)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img4.jpg"
+                onclick="openModal();currentSlide(4)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img5.jpg"
+                onclick="openModal();currentSlide(5)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img6.jpg"
+                onclick="openModal();currentSlide(6)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img7.jpg"
+                onclick="openModal();currentSlide(7)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img8.jpg"
+                onclick="openModal();currentSlide(8)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img9.jpg"
+                onclick="openModal();currentSlide(9)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img10.jpg"
+                onclick="openModal();currentSlide(10)"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="img/img11.jpg"
+                onclick="openModal();currentSlide(11)"
+                class="hover-shadow"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End Gallery Images -->
+        <!-- Start Lightbox -->
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()"
+            ><i class="far fa-times-circle"></i
+          ></span>
+          <div class="modal-content">
+            <div class="mySlides">
+              <div class="numbertext">1 / 11</div>
+              <img src="img/img1.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">2 / 11</div>
+              <img src="img/img2.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">3 / 11</div>
+              <img src="img/img3.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">4 / 11</div>
+              <img src="img/img4.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">5 / 11</div>
+              <img src="img/img5.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">6 / 11</div>
+              <img src="img/img6.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">7 / 11</div>
+              <img src="img/img7.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">8 / 11</div>
+              <img src="img/img8.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">9 / 11</div>
+              <img src="img/img9.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">10 / 11</div>
+              <img src="img/img10.jpg" style="width: 100%" />
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">11 / 11</div>
+              <img src="img/img11.jpg" style="width: 100%" />
+            </div>
+            <!-- End Lightbox -->
+            <!-- Start controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!-- End controls -->
+            <!-- Start Caption text -->
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+            <!-- End Caption text -->
+            <!-- Start Thumbnail controls -->
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img1.jpg"
+                onclick="currentSlide(1)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img2.jpg"
+                onclick="currentSlide(2)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img3.jpg"
+                onclick="currentSlide(3)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img4.jpg"
+                onclick="currentSlide(4)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img5.jpg"
+                onclick="currentSlide(5)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img6.jpg"
+                onclick="currentSlide(6)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img7.jpg"
+                onclick="currentSlide(7)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img8.jpg"
+                onclick="currentSlide(8)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img9.jpg"
+                onclick="currentSlide(9)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img10.jpg"
+                onclick="currentSlide(10)"
+                alt="Just Dance"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="img/img11.jpg"
+                onclick="currentSlide(11)"
+                alt="Just Dance"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Thumbnail controls -->
+    <!-- Start Courses -->
+    <div class="courses" id="courses">
+      <div class="container">
+        <h2 class="special-heading">Courses</h2>
+        <div class="courses-content">
+          <div class="courses-card">
+            <img src="./img/courses-img-1.jpeg" alt="" />
+            <div class="info">
+              <h3>BALLET Dancing Courses</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                commodi pariatur quae dolorum eum et!
+              </p>
+              <p>
+                <button class="courses-card-button" id="courses-card-button-1">
+                  MORE INFO
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="courses-card">
+            <img src="img/courses-img-2.jpg" alt="" />
+            <div class="info">
+              <h3>SALSA Dancing Courses</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                commodi pariatur quae dolorum eum et!
+              </p>
+              <p>
+                <button class="courses-card-button" id="courses-card-button-1">
+                  MORE INFO
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="courses-card">
+            <img src="img/courses-img-3.jpg" alt="" />
+            <div class="info">
+              <h3>HIP HOP Dancing Courses</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                commodi pariatur quae dolorum eum et!
+              </p>
+              <p>
+                <button class="courses-card-button" id="courses-card-button-1">
+                  MORE INFO
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="courses-card">
+            <img src="img/courses-img-4.jpg" alt="" />
+            <div class="info">
+              <h3>STREET Dancing Courses</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                commodi pariatur quae dolorum eum et!
+              </p>
+              <p>
+                <button class="courses-card-button" id="courses-card-button-1">
+                  MORE INFO
+                </button>
+              </p>
+            </div>
+          </div>
+          <div class="courses-card">
+            <img src="img/courses-img-5.jpg" alt="" />
+            <div class="info">
+              <h3>SAMBA Dancing Courses</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                commodi pariatur quae dolorum eum et!
+              </p>
+              <p>
+                <button class="courses-card-button" id="courses-card-button-1">
+                  MORE INFO
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Courses -->
+    <!-- Start About -->
+    <div class="about" id="about">
+      <div class="container">
+        <h2 class="special-heading">About</h2>
+        <div class="about-content">
+          <div class="image">
+            <img src="./img/about-pic.png" alt="" />
+          </div>
+          <div class="text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+              totam voluptates ab labore. Dicta ipsum voluptatum quo ducimus
+              voluptatibus possimus!
+            </p>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Perspiciatis ea placeat, totam adipisci rem necessitatibus maiores
+              sunt corporis molestias deserunt?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End About -->
+    <!-- Start Contact -->
+    <div class="contact" id="contact">
+      <div class="container">
+        <h2 class="special-heading">Contact</h2>
+        <div class="contact-card-section">
+          <div class="card">
+            <img
+              class="profile-img-1"
+              src="./img/portfolio-1.png"
+              alt="Profile-1"
+            />
+            <h1>Teacher Name</h1>
+            <p class="title">STREET & HIP HOP Dancing</p>
+            <p class="contact-card-social-icon">
+              <a href="tel:+46123456789"><i class="fa fa-phone"></i> Call me</a>
+              <br />
+              <a href="mailto:teacher-1.name@jdmail.se"
+                ><i class="fa fa-envelope"></i> Mail me</a
+              >
+            </p>
+            <div class="contact-card-social-icon">
+              <a href="#"><i class="fa fa-git"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+            <p>
+              <button class="read-more-button" id="read-more-button">
+                READ MORE
+              </button>
+            </p>
+          </div>
+          <div class="card">
+            <img
+              class="profile-img-1"
+              src="./img/portfolio-2.png"
+              alt="Profile-2"
+            />
+            <h1>Teacher Name</h1>
+            <p class="title">SALSA Dancing</p>
+            <p class="contact-card-social-icon">
+              <a href="tel:+46123456789"><i class="fa fa-phone"></i> Call me</a>
+              <br />
+              <a href="mailto:teacher-2.name@jdmail.se"
+                ><i class="fa fa-envelope"></i> Mail me</a
+              >
+            </p>
+            <div class="contact-card-social-icon">
+              <a href="#"><i class="fa fa-git"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+            <p>
+              <button class="read-more-button" id="read-more-button">
+                READ MORE
+              </button>
+            </p>
+          </div>
+          <div class="card">
+            <img
+              class="profile-img-1"
+              src="./img/portfolio-3.png"
+              alt="Profile-3"
+            />
+            <h1>Teacher Name</h1>
+            <p class="title">SAMBA Dancing</p>
+            <p class="contact-card-social-icon">
+              <a href="tel:+46123456789"><i class="fa fa-phone"></i> Call me</a>
+              <br />
+              <a href="mailto:teacher-3.name@jdmail.se"
+                ><i class="fa fa-envelope"></i> Mail me</a
+              >
+            </p>
+            <div class="contact-card-social-icon">
+              <a href="#"><i class="fa fa-git"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+            <p>
+              <button class="read-more-button" id="read-more-button">
+                READ MORE
+              </button>
+            </p>
+          </div>
+          <div class="card">
+            <img
+              class="profile-img-1"
+              src="./img/portfolio-4.png"
+              alt="Profile-4"
+            />
+            <h1>Teacher Name</h1>
+            <p class="title">BALLET Dancing</p>
+            <p class="contact-card-social-icon">
+              <a href="tel:+46123456789"><i class="fa fa-phone"></i> Call me</a>
+              <br />
+              <a href="mailto:teacher-4.name@jdmail.se"
+                ><i class="fa fa-envelope"></i> Mail me</a
+              >
+            </p>
+            <div class="contact-card-social-icon">
+              <a href="#"><i class="fa fa-git"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </div>
+            <p>
+              <button class="read-more-button" id="read-more-button">
+                READ MORE
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="info">
+          <p class="label">Feel free to drop us a line at:</p>
+          <a href="mailto:justdance@jdmail.se?subject=Contact" class="link">
+            justdance@jdmail.se
+          </a>
+          <div class="social">
+            Find Us On Social Networks
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-github"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact -->
+    <!-- Start LightBox Slider -->
+    <div id="image-lightbox">
+      <div class="lb-images-wrapper">
+        <div class="lb-header">
+          <span onclick="closeLightBox()"
+            ><i class="far fa-times-circle"></i
+          ></span>
+        </div>
+        <div class="lb-main-image-wrapper">
+          <img id="lb-main-image" src="" />
+          <span id="lb-prev-btn" onclick="prevLbImage()"
+            ><i class="fa fa-chevron-left"></i
+          ></span>
+          <span id="lb-next-btn" onclick="nextLbImage()"
+            ><i class="fa fa-chevron-right"></i
+          ></span>
+        </div>
+        <div id="lb-thumbnails-wrapper"></div>
+      </div>
+    </div>
+    <section id="images-section">
+      <main class="main-image-wrapper">
+        <img id="main-image" onclick="openLightBox(this.src)" src="" />
+        <span id="prev-btn"><i class="fa fa-chevron-left"></i></span>
+        <span id="next-btn"><i class="fa fa-chevron-right"></i></span>
+      </main>
+      <div id="thumbnails-wrapper"></div>
+    </section>
+    <!-- End LightBox Slider -->
+    <!-- Start Footer -->
+    <div class="footer">
+      &copy; 2021 <span>Just Dance AB</span> All Right Reserved
+    </div>
+    <!-- End Footer -->
+  </body>
+  <script src="./JavaScript/app.js"></script>
+</html>
